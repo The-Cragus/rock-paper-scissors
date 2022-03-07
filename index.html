@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const myArray = ['Rock','Paper','Scissors'];
+        const randomChoice = Math.floor(Math.random() * myArray.length);
+        
+        function computerPlay() {
+            return (randomChoice, myArray[randomChoice]);
+        }
+
+        console.log (randomChoice, myArray[randomChoice]);
+
+        function playRound (playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return ("We have a tie!");
+            } else if (computerSelection === 'Paper') {
+                return ("You lose! Paper beats Rock");
+            } else {
+                return ("You've won this round!");
+            }
+        }
+
+        const playerSelection = 'Rock';
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+
+    </script>
+</body>
+</html>
