@@ -5,62 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
 
-        let playerScore = 0;
-        let computerScore = 0;
+    <button>Rock</button>
+    <button>Paper</button>
+    <button>Scisscors</button>
 
-        //Gives a random value to the computer
-        function computerPlay() {
-            let myArray = ['Rock','Paper','Scissors'];
-            let randomChoice = Math.floor(Math.random() * myArray.length);
-            return (randomChoice, myArray[randomChoice]);
-        }
+    <div class="display"></div>
 
-        //Plays a round of rock, paper, scissors
-        function playRound() {
-
-            let computerSelection = computerPlay();
-            let playerSelection = prompt('Rock, Paper, or Scissors?');
-
-            if (playerSelection === computerSelection) {
-                alert ("We have a tie!");
-            } 
-            if ((playerSelection === 'Rock' && computerSelection === 'Scissors') ||
-                (playerSelection === 'Paper' && computerSelection === 'Rock') ||
-                (playerSelection === 'Scissors' && computerSelection === 'Paper'))
-                {
-                playerScore++
-                alert ("You have won this round!");
-            }
-            if ((computerSelection === 'Rock' && playerSelection === 'Scissors') ||
-                (computerSelection === 'Paper' && playerSelection === 'Rock') ||
-                (computerSelection === 'Scissors' && playerSelection === 'Paper'))
-                {
-                computerScore++
-                alert ("The computer has won this round!");
-            } 
-            if (playerScore >= 3) {
-                alert("You win the game!");
-            }
-            if (computerScore >= 3) {
-                alert("The computer wins the game!");
-            }
-         
-        }   
-
-        //Repeats playRound function until someone wins the game
-        function game() {
-            for (i = 0; playerScore < 3 && computerScore < 3; i++) {
-                playRound();
-            }
-        }
-        game();
-
-        console.log (playerScore, computerScore);
-        
-    </script>
 </body>
 </html>
